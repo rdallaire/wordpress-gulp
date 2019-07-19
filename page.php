@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main id="content">
+<main id="content" class="content">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="header">
@@ -17,3 +17,5 @@
     </article>
     <?php endwhile; endif; ?>
 </main>
+
+<?php get_footer(); ?>

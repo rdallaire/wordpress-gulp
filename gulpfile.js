@@ -21,7 +21,7 @@ var paths = {
 function clean() {
     // You can use multiple globbing patterns as you would with `gulp.src`,
     // for example if you are using del 2.0 or above, return its promise
-    return del([ 'assets' ]);
+    return del([ 'dist' ]);
   }
 
 function css() {
@@ -33,16 +33,24 @@ function css() {
       .pipe(reload({ stream:true }));
 }
 
+function php() {
+    return gulp.src('*.php')
+      .pipe(reload({ stream:true }));
+}
+
 function watch() {
     browserSync({
         proxy: 'localhost:8000'
       });
-    gulp.watch(paths.styles.src, css);
+    gulp.watch([paths.styles.src], gulp.series(clean, css,));
 }
 
-var build = gulp.series(css);
+var build = gulp.series(clean, css);
 
+var dev = gulp.series(build, watch);
 
+exports.dev = dev;
 exports.watch = watch;
+exports.build = build;
 exports.default = build;
 

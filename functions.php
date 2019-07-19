@@ -15,6 +15,16 @@ function blankslate_load_scripts() {
 wp_enqueue_style( 'blankslate-style', get_stylesheet_uri() );
 wp_enqueue_style( 'main', get_template_directory_uri() . '/dist/css/main.css' );
 wp_enqueue_script( 'jquery' );
+
+
+wp_enqueue_script(
+	'mainjs',
+	 get_template_directory_uri().'/main.js',
+	 array('jquery'),
+	 '',
+	 true
+);
+wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/main.js', '', '', true );
 }
 add_action( 'wp_footer', 'blankslate_footer_scripts' );
 function blankslate_footer_scripts() {
@@ -118,6 +128,12 @@ return $count;
 
 // game shortcode
 function wateractivity_game( $atts ){
-	return "Game!";
+	return '<div class="callout primary">
+	<h5>Water activity Game!</h5>
+	<p>It has an easy to override visual style, and is appropriately subdued.</p>
+	<a href="#">It\'s dangerous to go alone, take this.</a>
+	<div id="surveyContainer">TEST</div>
+
+  </div>';
 }
-add_shortcode( 'aw-game', 'wateractivity_game' );
+add_shortcode( 'awgame', 'wateractivity_game' );
