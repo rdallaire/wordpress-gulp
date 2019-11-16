@@ -116,8 +116,26 @@ return $count;
 }
 }
 
-// game shortcode
-function wateractivity_game( $atts ){
-	return "Game!";
+// add the action
+add_action('wp_enqueue_scripts', 'remove_default_styles');
+
+// remove default styles except admin bar
+function remove_default_styles () {
+	// get all styles data
+	global $wp_styles;
+
+	// create an array of stylesheet "handles" to allow to remain
+	// e.g. these styles will keep the admin bar styled
+	$styles_to_keep = array("wp-admin", "admin-bar", "dashicons", "open-sans");
+
+	// loop over all of the registered scripts
+	foreach ($wp_styles->registered as $handle => $data)
+	{
+		// if we want to keep it, skip it
+		if ( in_array($handle, $styles_to_keep) ) continue;
+
+		// otherwise remove it
+		wp_deregister_style($handle);
+		wp_dequeue_style($handle);
+	}
 }
-add_shortcode( 'aw-game', 'wateractivity_game' );
