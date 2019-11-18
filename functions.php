@@ -126,7 +126,7 @@ function remove_default_styles () {
 
 	// create an array of stylesheet "handles" to allow to remain
 	// e.g. these styles will keep the admin bar styled
-	$styles_to_keep = array("wp-admin", "admin-bar", "dashicons", "open-sans");
+	$styles_to_keep = array("wp-admin", "admin-bar", "dashicons", "open-sans", "main");
 
 	// loop over all of the registered scripts
 	foreach ($wp_styles->registered as $handle => $data)

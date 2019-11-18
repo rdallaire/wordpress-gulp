@@ -1,0 +1,53 @@
+// GLOBAL SETTINGS
+$page-width: 1200px;
+$green: #089530;
+$aroya: #338edc;
+$black: #202020;
+$grey: #787878;
+$grey-background: #f3f3f3;
+$white: #ffffff;
+$aroya-green: #89e05d;
+
+$color-main: $aroya;
+$color-font: $grey;
+
+$border-radius: 3px;
+
+// FONTS
+$font-sans: Akkurat Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+$font-serif: Times New Roman;
+$font-mono: Courier;
+
+// TYPOGRAPHY
+$header-large: 60px;
+$header-medium: 40px;
+$header-micro: 15px;
+$number-size: 70px;
+
+// SPACING & WIDTHS
+$page-header-width: 650px;
+$section-header-width: 860px;
+$section-text-width: 900px;
+$headline-space: 15px;
+
+$spacing-small: 30px;
+$regular-spacing: 65px;
+$section-spacing: 100px;
+$spacing-5: 50px;
+$section-spacing-mobile: 50px;
+
+$grid-gap: 20px;
+
+// OTHER
+$box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+
+// BUTTONS
+$button-height:     30px;
+$button-padding:    0 15px;
+
+// MEDA QUERIES
+$bp-4:    "(min-width: 480px)";
+$bp-7:    "(min-width: 768px)";
+$bp-9:    "(min-width: 992px)";
+$bp-12:   "(min-width: 1200px)";
+$bp-pw:   "(max-width: 1230px)"; // page width + small spacing

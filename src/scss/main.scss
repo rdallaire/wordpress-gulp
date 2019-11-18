@@ -1,8 +1,7 @@
-$background: white;
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
 
-body {
-    background-color: $background !important;
-}
-
-
-//
+@import 'footer';
+@import 'header';
+@import 'global';
