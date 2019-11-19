@@ -1,4 +1,4 @@
-![Gulp WordPress](https://media.giphy.com/media/l2SqjtvN3C0nuQR3i/giphy.gif)
+![Gulp WordPress](https://media.giphy.com/media/xT9IgEz0ggPj403S6c/giphy.gif)
 
 # Gulp WordPress starter
 
