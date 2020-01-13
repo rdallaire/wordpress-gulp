@@ -3,3 +3,8 @@
 # Gulp WordPress starter
 
 More information to come
+
+
+## In-depth
+
+`src/fonts` - Put local fonts here
