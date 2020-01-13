@@ -23,7 +23,11 @@ const paths = {
     },
     img: {
         src: 'src/img/**/*',
-        dest: 'site/img/'
+        dest: 'dist/img/'
+	},
+	fonts: {
+        src: 'src/fonts/**/*',
+        dest: 'dist/fonts/'
     },
     php: {
         src: './**/*.php'
@@ -126,10 +130,11 @@ function watchFiles() {
     gulp.watch(paths.img.src, imgWebp);
 }
 
-var build = gulp.series(clean, styles, js, img, imgWebp);
-var preWatch = gulp.series(clean, stylesWatch, img, js, imgWebp);
+var build 		= gulp.series(clean, styles, js, img, imgWebp, fonts);
+var preWatch 	= gulp.series(clean, stylesWatch, img, js, imgWebp, fonts);
 var watchActual = gulp.parallel(watchFiles, browserSync);
-var watch = gulp.series(preWatch, watchActual);
+var watch 		= gulp.series(preWatch, watchActual);
 
 exports.watch = watch;
 exports.default = build;
+
